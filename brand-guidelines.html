@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Manju Construction — Brand Guidelines</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: #0D0D0D;
+  color: #F5F5F5;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0D0D0D; }
+::-webkit-scrollbar-thumb { background: #E50914; }
+
+h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; letter-spacing: -0.02em; }
+
+/* COVER */
+.cover {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a0e08 40%, #0d0d0d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 50%, rgba(229,9,20,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(212,175,55,0.06) 0%, transparent 50%);
+}
+
+.cover-grid {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23D4AF37' opacity='0.07'/%3E%3C/svg%3E");
+}
+
+.cover-inner {
+  position: relative;
+  z-index: 1;
+  padding: 60px;
+  max-width: 800px;
+}
+
+.cover-logo { height: 80px; margin-bottom: 40px; }
+
+.cover-rule {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(to right, #E50914, #D4AF37);
+  margin: 0 auto 32px;
+}
+
+.cover-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #D4AF37;
+  margin-bottom: 20px;
+}
+
+.cover-title {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.cover-title .r { color: #E50914; }
+.cover-title .g { color: #D4AF37; }
+
+.cover-sub {
+  font-size: 16px;
+  color: #666;
+  max-width: 500px;
+  margin: 0 auto 48px;
+}
+
+.cover-meta {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,245,245,0.25);
+}
+
+/* LAYOUT */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 48px;
+}
+
+.chapter {
+  padding: 100px 0;
+  border-bottom: 1px solid rgba(212,175,55,0.08);
+}
+.chapter:last-child { border-bottom: none; }
+
+.chapter-num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #E50914;
+  margin-bottom: 8px;
+}
+
+.chapter-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.chapter-sub {
+  font-size: 15px;
+  color: #666;
+  max-width: 560px;
+  margin-bottom: 60px;
+  line-height: 1.75;
+}
+
+/* COLORS */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.color-card {
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.color-swatch {
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.color-role {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.color-info {
+  padding: 20px;
+  background: #1A1A1A;
+}
+
+.color-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.color-hex {
+  font-family: 'Inter', monospace;
+  font-size: 13px;
+  color: #D4AF37;
+  margin-bottom: 12px;
+}
+
+.color-use {
+  font-size: 12.5px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.color-forbidden {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border: 1px solid rgba(229,9,20,0.25);
+  color: #E50914;
+}
+
+/* TYPOGRAPHY */
+.type-scale {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: #1A1A1A;
+  border: 1px solid rgba(212,175,55,0.08);
+  overflow: hidden;
+}
+
+.type-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 200px;
+  align-items: center;
+  padding: 24px 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  gap: 32px;
+}
+
+.type-row:last-child { border-bottom: none; }
+
+.type-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #D4AF37;
+}
+
+.type-spec {
+  font-family: 'Inter', monospace;
+  font-size: 12px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.font-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.font-card {
+  background: #1A1A1A;
+  border: 1px solid rgba(212,175,55,0.08);
+  padding: 40px;
+}
+
+.font-tag {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #E50914;
+  margin-bottom: 20px;
+}
+
+.font-name {
+  font-size: 13px;
+  color: #555;
+  font-family: 'Inter', monospace;
+  margin-bottom: 24px;
+}
+
+.font-display-h { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 36px; letter-spacing: -0.03em; line-height: 1.1; }
+.font-display-b { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 15px; color: #888; line-height: 1.7; margin-top: 16px; }
+
+.font-alphabet {
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: #444;
+  margin-top: 16px;
+  line-height: 1.8;
+  font-family: inherit;
+}
+
+/* LOGO SECTION */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.logo-box {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border: 1px solid rgba(212,175,55,0.08);
+  position: relative;
+}
+
+.logo-box img { max-height: 80px; width: auto; }
+
+.logo-box-label {
+  position: absolute;
+  bottom: 16px;
+  left: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,245,245,0.25);
+}
+
+.logo-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.logo-rule-card {
+  background: #1A1A1A;
+  border: 1px solid rgba(212,175,55,0.08);
+  padding: 28px;
+}
+
+.logo-rule-icon {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.logo-rule-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.logo-rule-desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.65;
+}
+
+/* BUTTONS */
+.btn-showcase {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.btn-doc-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: #E50914;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  box-shadow: 0 4px 24px rgba(229,9,20,0.35);
+}
+
+.btn-doc-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 27px;
+  background: transparent;
+  color: #D4AF37;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1.5px solid #D4AF37;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+.btn-doc-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 27px;
+  background: transparent;
+  color: rgba(245,245,245,0.6);
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(245,245,245,0.15);
+}
+
+.btn-doc-hover {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: #B5070F;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 32px rgba(229,9,20,0.5);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+.btn-spec {
+  background: #111;
+  border: 1px solid rgba(212,175,55,0.12);
+  padding: 24px;
+  margin-top: 8px;
+}
+
+.btn-spec-row {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.btn-spec-item { }
+
+.spec-key {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #D4AF37;
+  margin-bottom: 4px;
+}
+
+.spec-val {
+  font-family: 'Inter', monospace;
+  font-size: 13px;
+  color: #888;
+}
+
+/* CARDS */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.doc-project-card {
+  background: #1A1A1A;
+  border: 1px solid rgba(212,175,55,0.08);
+  overflow: hidden;
+}
+
+.doc-card-img {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.doc-card-body {
+  padding: 24px;
+}
+
+.doc-card-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  background: #E50914;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.doc-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.doc-card-desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.65;
+}
+
+.doc-service-card {
+  background: #1A1A1A;
+  border: 1px solid rgba(212,175,55,0.08);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.doc-service-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(to right, #E50914, #D4AF37);
+}
+
+/* SPACING */
+.spacing-scale {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: #1A1A1A;
+  border: 1px solid rgba(212,175,55,0.08);
+  overflow: hidden;
+}
+
+.spacing-row {
+  display: grid;
+  grid-template-columns: 80px 80px 1fr 200px;
+  align-items: center;
+  padding: 16px 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  gap: 24px;
+}
+
+.spacing-row:last-child { border-bottom: none; }
+
+.spacing-token {
+  font-family: 'Inter', monospace;
+  font-size: 12px;
+  color: #D4AF37;
+}
+
+.spacing-px {
+  font-family: 'Inter', monospace;
+  font-size: 12px;
+  color: #666;
+}
+
+.spacing-bar-wrap { height: 20px; display: flex; align-items: center; }
+
+.spacing-bar {
+  height: 8px;
+  background: linear-gradient(to right, #E50914, #D4AF37);
+  opacity: 0.7;
+}
+
+.spacing-use {
+  font-size: 12px;
+  color: #555;
+}
+
+/* DESIGN PRINCIPLES */
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.principle-card {
+  background: #1A1A1A;
+  border: 1px solid rgba(212,175,55,0.08);
+  padding: 36px;
+  position: relative;
+}
+
+.principle-num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 56px;
+  font-weight: 900;
+  color: rgba(212,175,55,0.06);
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.principle-icon {
+  width: 44px; height: 44px;
+  border: 1px solid rgba(212,175,55,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.principle-icon svg {
+  width: 20px; height: 20px;
+  stroke: #D4AF37;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.principle-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.principle-desc {
+  font-size: 13.5px;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* TONE */
+.tone-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.tone-card {
+  background: #1A1A1A;
+  border: 1px solid rgba(212,175,55,0.08);
+  padding: 32px;
+}
+
+.tone-word {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #E50914;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.tone-desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.tone-example {
+  font-size: 12px;
+  color: #444;
+  font-style: italic;
+  border-left: 2px solid rgba(212,175,55,0.2);
+  padding-left: 12px;
+  line-height: 1.6;
+}
+
+/* DO/DON'T */
+.do-dont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.do-card, .dont-card {
+  padding: 28px;
+  border: 1px solid;
+}
+
+.do-card {
+  background: rgba(212,175,55,0.04);
+  border-color: rgba(212,175,55,0.15);
+}
+
+.dont-card {
+  background: rgba(229,9,20,0.04);
+  border-color: rgba(229,9,20,0.15);
+}
+
+.do-label, .dont-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.do-label { color: #D4AF37; }
+.dont-label { color: #E50914; }
+
+.do-list, .dont-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.do-list li, .dont-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: #999;
+  line-height: 1.5;
+}
+
+.do-list li::before {
+  content: '✓';
+  flex-shrink: 0;
+  color: #D4AF37;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+.dont-list li::before {
+  content: '✕';
+  flex-shrink: 0;
+  color: #E50914;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+/* IMAGERY */
+.imagery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.imagery-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.imagery-card-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+
+.imagery-card-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(13,13,13,0.9), transparent);
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,245,245,0.6);
+}
+
+/* COPYWRITING */
+.copy-block {
+  background: #1A1A1A;
+  border: 1px solid rgba(212,175,55,0.08);
+  border-left: 3px solid #E50914;
+  padding: 28px 32px;
+  margin-bottom: 16px;
+}
+
+.copy-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #D4AF37;
+  margin-bottom: 10px;
+}
+
+.copy-text {
+  font-size: 15px;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+.copy-text strong { color: #F5F5F5; }
+
+/* SECTION DIVIDER */
+.section-label-line {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.sl-num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #E50914;
+}
+
+.sl-bar {
+  flex: 1;
+  height: 1px;
+  background: rgba(212,175,55,0.12);
+}
+
+.sl-tag {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245,245,245,0.2);
+}
+
+/* NAV SIDEBAR (mini TOC) */
+.sticky-nav {
+  position: fixed;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sticky-nav a {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(212,175,55,0.2);
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.sticky-nav a:hover {
+  background: #D4AF37;
+  transform: scale(1.5);
+}
+
+@media (max-width: 900px) {
+  .color-grid { grid-template-columns: 1fr 1fr; }
+  .font-pair { grid-template-columns: 1fr; }
+  .logo-grid { grid-template-columns: 1fr; }
+  .logo-rules-grid { grid-template-columns: 1fr 1fr; }
+  .card-grid { grid-template-columns: 1fr; }
+  .principles-grid { grid-template-columns: 1fr; }
+  .tone-grid { grid-template-columns: 1fr; }
+  .do-dont { grid-template-columns: 1fr; }
+  .imagery-grid { grid-template-columns: 1fr 1fr; }
+  .type-row { grid-template-columns: 100px 1fr; }
+  .type-row .type-spec { display: none; }
+  .spacing-row { grid-template-columns: 60px 60px 1fr; }
+  .spacing-row .spacing-use { display: none; }
+  .sticky-nav { display: none; }
+  .page { padding: 60px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="sticky-nav">
+  <a href="#cover" title="Cover"></a>
+  <a href="#brand" title="Brand"></a>
+  <a href="#colors" title="Colors"></a>
+  <a href="#typography" title="Typography"></a>
+  <a href="#logo" title="Logo"></a>
+  <a href="#ui" title="UI"></a>
+  <a href="#spacing" title="Spacing"></a>
+  <a href="#copy" title="Copywriting"></a>
+  <a href="#principles" title="Principles"></a>
+  <a href="#imagery" title="Imagery"></a>
+</nav>
+
+<!-- COVER -->
+<section class="cover" id="cover">
+  <div class="cover-grid"></div>
+  <div class="cover-inner">
+    <img src="brand_assets/logo.jpg" class="cover-logo" alt="Manju Construction" />
+    <div class="cover-rule"></div>
+    <div class="cover-label">Official Brand Document · 2024</div>
+    <h1 class="cover-title">
+      Brand<br/><span class="r">Guide</span><span class="g">lines</span>
+    </h1>
+    <p class="cover-sub">A comprehensive visual identity and design system for Manju Construction — the premium standard for all brand communications.</p>
+    <div class="cover-meta">Confidential · Prepared by Design Team · Version 1.0</div>
+  </div>
+</section>
+
+<div class="page">
+
+  <!-- ═══ 01. BRAND OVERVIEW ═══ -->
+  <div class="chapter" id="brand">
+    <div class="section-label-line"><span class="sl-num">01</span><div class="sl-bar"></div><span class="sl-tag">Brand Overview</span></div>
+    <div class="chapter-num">Chapter One</div>
+    <h2 class="chapter-title">Brand Personality &amp; Tone</h2>
+    <p class="chapter-sub">Manju Construction stands for strength, precision, and trust. Every visual and verbal expression must reinforce these core values.</p>
+
+    <div class="tone-grid">
+      <div class="tone-card">
+        <div class="tone-word">Confident</div>
+        <div class="tone-desc">Speak with authority. Never hedge. Manju Construction has earned its reputation — the brand voice should reflect that certainty.</div>
+        <div class="tone-example">"We deliver. On time. Every time."</div>
+      </div>
+      <div class="tone-card">
+        <div class="tone-word">Premium</div>
+        <div class="tone-desc">Every word, every pixel signals quality. Avoid generic corporate language. Choose precise, powerful expressions that feel exclusive.</div>
+        <div class="tone-example">"Built to outlast generations."</div>
+      </div>
+      <div class="tone-card">
+        <div class="tone-word">Trustworthy</div>
+        <div class="tone-desc">Transparency builds loyalty. Be direct about processes, timelines, and outcomes. Back statements with proof — numbers, testimonials, years of service.</div>
+        <div class="tone-example">"20+ years. 100+ projects. 0 compromises."</div>
+      </div>
+      <div class="tone-card">
+        <div class="tone-word">Clear</div>
+        <div class="tone-desc">No jargon. No filler. Say what needs to be said in the fewest, strongest words. Clients value clarity over complexity.</div>
+        <div class="tone-example">"One call. Your vision, our expertise."</div>
+      </div>
+      <div class="tone-card">
+        <div class="tone-word">Aspirational</div>
+        <div class="tone-desc">Speak to what clients want to become — not just what they need today. Elevate expectations and then exceed them.</div>
+        <div class="tone-example">"Where your dream becomes an address."</div>
+      </div>
+      <div class="tone-card">
+        <div class="tone-word">Human</div>
+        <div class="tone-desc">Despite the premium positioning, stay approachable. Real people, real homes, real relationships. Warmth beneath the professionalism.</div>
+        <div class="tone-example">"We build spaces people call home."</div>
+      </div>
+    </div>
+
+    <div class="do-dont">
+      <div class="do-card">
+        <div class="do-label">✓ Do Say</div>
+        <ul class="do-list">
+          <li>Building Trust. Creating Value.</li>
+          <li>Premium construction, uncompromising quality</li>
+          <li>Your vision, our expertise</li>
+          <li>Built to last generations</li>
+          <li>Precision in every detail</li>
+          <li>Delivered on time, every time</li>
+        </ul>
+      </div>
+      <div class="dont-card">
+        <div class="dont-label">✕ Never Say</div>
+        <ul class="dont-list">
+          <li>Cheap rates / affordable options</li>
+          <li>We try our best</li>
+          <li>Quick and easy construction</li>
+          <li>Just another building company</li>
+          <li>Budget-friendly packages</li>
+          <li>We might be able to…</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 02. COLOR PALETTE ═══ -->
+  <div class="chapter" id="colors">
+    <div class="section-label-line"><span class="sl-num">02</span><div class="sl-bar"></div><span class="sl-tag">Color Palette</span></div>
+    <div class="chapter-num">Chapter Two</div>
+    <h2 class="chapter-title">Color System</h2>
+    <p class="chapter-sub">Six precision-chosen colors form the entire palette. Never deviate. Never substitute with generic alternatives.</p>
+
+    <div class="color-grid">
+
+      <div class="color-card">
+        <div class="color-swatch" style="background:#E50914;">
+          <div class="color-role" style="color:rgba(255,255,255,0.5);">Primary Brand</div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Brand Red</div>
+          <div class="color-hex">#E50914</div>
+          <div class="color-use">Primary CTAs, key headings, accent highlights, logo "C" element, button backgrounds, section markers. Never use as a body text color.</div>
+        </div>
+      </div>
+
+      <div class="color-card">
+        <div class="color-swatch" style="background:#D4AF37;">
+          <div class="color-role" style="color:rgba(0,0,0,0.4);">Luxury Accent</div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Luxury Gold</div>
+          <div class="color-hex">#D4AF37</div>
+          <div class="color-use">Secondary accents, icon strokes, border treatments, subheadings, secondary buttons, decorative lines. Signals premium and exclusivity.</div>
+        </div>
+      </div>
+
+      <div class="color-card">
+        <div class="color-swatch" style="background:#0D0D0D;">
+          <div class="color-role" style="color:rgba(255,255,255,0.3);">Foundation</div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Deep Black</div>
+          <div class="color-hex">#0D0D0D</div>
+          <div class="color-use">Page background, primary surface. The foundation all other elements sit upon. Never use pure #000000 — the 5% lift creates depth.</div>
+        </div>
+      </div>
+
+      <div class="color-card">
+        <div class="color-swatch" style="background:#1A1A1A;">
+          <div class="color-role" style="color:rgba(255,255,255,0.25);">Elevated Surface</div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Dark Grey</div>
+          <div class="color-hex">#1A1A1A</div>
+          <div class="color-use">Cards, panels, elevated surfaces. Creates the Z-plane layering system — use to lift elements above the base background.</div>
+        </div>
+      </div>
+
+      <div class="color-card">
+        <div class="color-swatch" style="background:#666666;">
+          <div class="color-role" style="color:rgba(255,255,255,0.5);">Supporting Text</div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Mid Grey</div>
+          <div class="color-hex">#666666</div>
+          <div class="color-use">Body text on dark backgrounds, supporting copy, meta information, placeholder text. Never use for headings or primary content.</div>
+        </div>
+      </div>
+
+      <div class="color-card">
+        <div class="color-swatch" style="background:#F5F5F5;border:1px solid rgba(0,0,0,0.08);">
+          <div class="color-role" style="color:rgba(0,0,0,0.3);">Foreground</div>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Off White</div>
+          <div class="color-hex">#F5F5F5</div>
+          <div class="color-use">Primary text on dark backgrounds, headings, UI labels. Use #F5F5F5 — not pure white. The 2% warmth prevents harshness.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:40px;background:#1A1A1A;border:1px solid rgba(212,175,55,0.08);padding:32px;">
+      <div class="copy-label" style="margin-bottom:20px;">Color Usage Ratios</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+        <div>
+          <div style="height:8px;background:#0D0D0D;border:1px solid #333;margin-bottom:8px;"></div>
+          <div style="font-size:12px;color:#555;font-family:'Poppins',sans-serif;font-weight:600;">Background · 60%</div>
+        </div>
+        <div>
+          <div style="height:8px;background:#1A1A1A;margin-bottom:8px;"></div>
+          <div style="font-size:12px;color:#555;font-family:'Poppins',sans-serif;font-weight:600;">Surfaces · 25%</div>
+        </div>
+        <div>
+          <div style="height:8px;background:#E50914;margin-bottom:8px;"></div>
+          <div style="font-size:12px;color:#555;font-family:'Poppins',sans-serif;font-weight:600;">Brand Red · 10%</div>
+        </div>
+        <div>
+          <div style="height:8px;background:#D4AF37;margin-bottom:8px;"></div>
+          <div style="font-size:12px;color:#555;font-family:'Poppins',sans-serif;font-weight:600;">Gold Accent · 5%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 03. TYPOGRAPHY ═══ -->
+  <div class="chapter" id="typography">
+    <div class="section-label-line"><span class="sl-num">03</span><div class="sl-bar"></div><span class="sl-tag">Typography</span></div>
+    <div class="chapter-num">Chapter Three</div>
+    <h2 class="chapter-title">Type System</h2>
+    <p class="chapter-sub">Two typefaces, used with intention. Poppins carries authority. Inter delivers clarity. Never mix with other fonts.</p>
+
+    <div class="font-pair">
+      <div class="font-card">
+        <div class="font-tag">Display &amp; Headings</div>
+        <div class="font-name">font-family: 'Poppins', sans-serif</div>
+        <div class="font-display-h" style="font-family:'Poppins',sans-serif;">Aa</div>
+        <div style="font-family:'Poppins',sans-serif;font-size:28px;font-weight:800;letter-spacing:-0.03em;margin-top:16px;">Building Trust.</div>
+        <div class="font-alphabet" style="font-family:'Poppins',sans-serif;">
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+          abcdefghijklmnopqrstuvwxyz<br/>
+          0123456789 &amp; @ # % + —
+        </div>
+        <div style="margin-top:20px;display:flex;gap:16px;flex-wrap:wrap;">
+          <span style="font-family:'Poppins',sans-serif;font-weight:900;font-size:12px;color:#D4AF37;letter-spacing:0.05em;">900 Black</span>
+          <span style="font-family:'Poppins',sans-serif;font-weight:800;font-size:12px;color:#D4AF37;letter-spacing:0.05em;">800 ExtraBold</span>
+          <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:12px;color:#D4AF37;letter-spacing:0.05em;">700 Bold</span>
+          <span style="font-family:'Poppins',sans-serif;font-weight:600;font-size:12px;color:#D4AF37;letter-spacing:0.05em;">600 SemiBold</span>
+          <span style="font-family:'Poppins',sans-serif;font-weight:500;font-size:12px;color:#D4AF37;letter-spacing:0.05em;">500 Medium</span>
+        </div>
+      </div>
+
+      <div class="font-card">
+        <div class="font-tag">Body &amp; UI Text</div>
+        <div class="font-name">font-family: 'Inter', sans-serif</div>
+        <div class="font-display-h" style="font-family:'Inter',sans-serif;font-weight:400;">Aa</div>
+        <div style="font-family:'Inter',sans-serif;font-size:15px;color:#888;line-height:1.75;margin-top:16px;">Creating Value. Every structure we build is a reflection of decades of mastery, precision engineering, and a relentless commitment to quality.</div>
+        <div class="font-alphabet" style="font-family:'Inter',sans-serif;">
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+          abcdefghijklmnopqrstuvwxyz<br/>
+          0123456789 &amp; @ # % + —
+        </div>
+        <div style="margin-top:20px;display:flex;gap:16px;flex-wrap:wrap;">
+          <span style="font-family:'Inter',sans-serif;font-weight:600;font-size:12px;color:#D4AF37;letter-spacing:0.05em;">600 SemiBold</span>
+          <span style="font-family:'Inter',sans-serif;font-weight:500;font-size:12px;color:#D4AF37;letter-spacing:0.05em;">500 Medium</span>
+          <span style="font-family:'Inter',sans-serif;font-weight:400;font-size:12px;color:#D4AF37;letter-spacing:0.05em;">400 Regular</span>
+          <span style="font-family:'Inter',sans-serif;font-weight:300;font-size:12px;color:#D4AF37;letter-spacing:0.05em;">300 Light</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;">
+      <div class="copy-label" style="margin-bottom:24px;">Type Scale</div>
+      <div class="type-scale">
+        <div class="type-row">
+          <div class="type-label">H1 / Hero</div>
+          <div style="font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(48px,5vw,72px);letter-spacing:-0.03em;line-height:1.0;">Build.</div>
+          <div class="type-spec">Poppins 900 · 64–96px<br/>tracking: -0.03em · lh: 1.0</div>
+        </div>
+        <div class="type-row">
+          <div class="type-label">H2 / Section</div>
+          <div style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(28px,4vw,48px);letter-spacing:-0.03em;">Our Services</div>
+          <div class="type-spec">Poppins 800 · 32–52px<br/>tracking: -0.03em · lh: 1.15</div>
+        </div>
+        <div class="type-row">
+          <div class="type-label">H3 / Card</div>
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.01em;">Residential Construction</div>
+          <div class="type-spec">Poppins 700 · 18–22px<br/>tracking: -0.01em · lh: 1.25</div>
+        </div>
+        <div class="type-row">
+          <div class="type-label">Label / Tag</div>
+          <div style="font-family:'Poppins',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#D4AF37;">What We Build</div>
+          <div class="type-spec">Poppins 600 · 10–12px<br/>tracking: 0.18em · UPPERCASE</div>
+        </div>
+        <div class="type-row">
+          <div class="type-label">Body</div>
+          <div style="font-family:'Inter',sans-serif;font-size:15px;color:#888;line-height:1.7;">Crafted with precision, built to last, designed to inspire.</div>
+          <div class="type-spec">Inter 400 · 14–16px<br/>tracking: 0 · lh: 1.7</div>
+        </div>
+        <div class="type-row">
+          <div class="type-label">Small / Meta</div>
+          <div style="font-family:'Inter',sans-serif;font-size:12px;color:#555;line-height:1.6;">Coimbatore, Tamil Nadu · Est. 2004</div>
+          <div class="type-spec">Inter 400 · 11–13px<br/>tracking: 0 · lh: 1.6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 04. LOGO ═══ -->
+  <div class="chapter" id="logo">
+    <div class="section-label-line"><span class="sl-num">04</span><div class="sl-bar"></div><span class="sl-tag">Logo Usage</span></div>
+    <div class="chapter-num">Chapter Four</div>
+    <h2 class="chapter-title">Logo System</h2>
+    <p class="chapter-sub">The MC monogram and wordmark are the brand's primary identifiers. Treat them with absolute consistency.</p>
+
+    <div class="logo-grid">
+      <div class="logo-box" style="background:#0D0D0D;">
+        <img src="brand_assets/logo.jpg" alt="Logo — Dark Background" />
+        <div class="logo-box-label">Primary — On Dark</div>
+      </div>
+      <div class="logo-box" style="background:#F5F5F5;">
+        <img src="brand_assets/logo.jpg" alt="Logo — Light Background" style="filter:invert(0);" />
+        <div class="logo-box-label" style="color:rgba(0,0,0,0.3);">On Light Background</div>
+      </div>
+    </div>
+
+    <div class="logo-rules-grid">
+      <div class="logo-rule-card">
+        <div class="logo-rule-icon" style="background:rgba(212,175,55,0.08);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="logo-rule-title">Clear Space</div>
+        <div class="logo-rule-desc">Always maintain minimum clear space equal to the height of the "M" letterform on all four sides of the logo.</div>
+      </div>
+      <div class="logo-rule-card">
+        <div class="logo-rule-icon" style="background:rgba(212,175,55,0.08);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+        </div>
+        <div class="logo-rule-title">Minimum Size</div>
+        <div class="logo-rule-desc">Digital: minimum 120px wide. Print: minimum 30mm wide. Below these sizes, legibility of the wordmark is compromised.</div>
+      </div>
+      <div class="logo-rule-card">
+        <div class="logo-rule-icon" style="background:rgba(212,175,55,0.08);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="logo-rule-title">Approved Backgrounds</div>
+        <div class="logo-rule-desc">Use on Deep Black (#0D0D0D), Dark Grey (#1A1A1A), or white (#F5F5F5) only. No patterned or photographic backgrounds.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;background:#1A1A1A;border:1px solid rgba(229,9,20,0.15);padding:32px;">
+      <div class="dont-label" style="margin-bottom:16px;">✕ Never Do This With The Logo</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;font-size:13px;color:#555;line-height:1.6;">
+        <div>— Stretch or distort proportions<br/>— Rotate or flip the mark<br/>— Apply drop shadows or glows</div>
+        <div>— Place on busy backgrounds<br/>— Change the red to another color<br/>— Use partial marks alone</div>
+        <div>— Add borders or outlines<br/>— Place below minimum size<br/>— Rearrange mark + wordmark</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 05. UI DESIGN SYSTEM ═══ -->
+  <div class="chapter" id="ui">
+    <div class="section-label-line"><span class="sl-num">05</span><div class="sl-bar"></div><span class="sl-tag">UI Design System</span></div>
+    <div class="chapter-num">Chapter Five</div>
+    <h2 class="chapter-title">UI Components</h2>
+    <p class="chapter-sub">Every interactive element follows this system. Consistency across all touchpoints is mandatory.</p>
+
+    <!-- BUTTONS -->
+    <div style="margin-bottom:64px;">
+      <div class="copy-label" style="margin-bottom:24px;">Buttons</div>
+
+      <div class="btn-showcase">
+        <div class="btn-doc-primary">Explore Projects →</div>
+        <div class="btn-doc-secondary">Get a Free Quote</div>
+        <div class="btn-doc-ghost">Download Brochure</div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="width:6px;height:6px;background:#D4AF37;border-radius:50%;opacity:0.5;"></div>
+          <span style="font-size:12px;color:#444;font-family:'Poppins',sans-serif;letter-spacing:0.05em;">Hover State →</span>
+        </div>
+        <div class="btn-doc-hover">Explore Projects →</div>
+      </div>
+
+      <div class="btn-spec">
+        <div style="margin-bottom:16px;font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#D4AF37;">Primary Button Specs</div>
+        <div class="btn-spec-row">
+          <div class="btn-spec-item">
+            <div class="spec-key">Background</div>
+            <div class="spec-val">#E50914</div>
+          </div>
+          <div class="btn-spec-item">
+            <div class="spec-key">Hover BG</div>
+            <div class="spec-val">#B5070F</div>
+          </div>
+          <div class="btn-spec-item">
+            <div class="spec-key">Padding</div>
+            <div class="spec-val">13px 28px</div>
+          </div>
+          <div class="btn-spec-item">
+            <div class="spec-key">Font</div>
+            <div class="spec-val">Poppins 600 · 13px</div>
+          </div>
+          <div class="btn-spec-item">
+            <div class="spec-key">Tracking</div>
+            <div class="spec-val">0.06em · UPPERCASE</div>
+          </div>
+          <div class="btn-spec-item">
+            <div class="spec-key">Shadow</div>
+            <div class="spec-val">0 4px 24px rgba(229,9,20,.35)</div>
+          </div>
+          <div class="btn-spec-item">
+            <div class="spec-key">Clip Path</div>
+            <div class="spec-val">Chamfered corner 10px</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARDS -->
+    <div style="margin-bottom:64px;">
+      <div class="copy-label" style="margin-bottom:24px;">Project Cards</div>
+      <div class="card-grid">
+        <div class="doc-project-card">
+          <div class="doc-card-img" style="background:linear-gradient(135deg,#2a1a0a,#1a0d05,#0f0a08);">
+            <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(13,13,13,0.9),transparent 50%);"></div>
+            <div style="position:absolute;bottom:16px;left:16px;">
+              <div class="doc-card-tag">Luxury Villa</div>
+            </div>
+          </div>
+          <div class="doc-card-body">
+            <div class="doc-card-title">Signature Estate Villa</div>
+            <div class="doc-card-desc">Coimbatore, Tamil Nadu · 2023</div>
+          </div>
+        </div>
+        <div class="doc-service-card">
+          <div style="font-size:11px;font-family:'Poppins',sans-serif;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#D4AF37;margin-bottom:16px;">Service Card</div>
+          <div style="width:44px;height:44px;border:1.5px solid rgba(212,175,55,0.3);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;margin-bottom:10px;">Residential Construction</div>
+          <div style="font-size:13px;color:#666;line-height:1.7;">Luxury villas and premium apartments built with enduring quality and meticulous attention to detail.</div>
+          <div style="margin-top:16px;font-size:11px;font-family:'Poppins',sans-serif;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(212,175,55,0.35);">Learn More →</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ICONS -->
+    <div>
+      <div class="copy-label" style="margin-bottom:24px;">Icon System</div>
+      <div style="background:#1A1A1A;border:1px solid rgba(212,175,55,0.08);padding:32px;display:flex;flex-wrap:wrap;gap:32px;align-items:center;">
+        <div style="text-align:center;">
+          <div style="width:48px;height:48px;border:1.5px solid rgba(212,175,55,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div style="font-size:10px;color:#444;font-family:'Poppins',sans-serif;">Residential</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:48px;height:48px;border:1.5px solid rgba(212,175,55,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <div style="font-size:10px;color:#444;font-family:'Poppins',sans-serif;">Commercial</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:48px;height:48px;border:1.5px solid rgba(212,175,55,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div style="font-size:10px;color:#444;font-family:'Poppins',sans-serif;">Interior</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:48px;height:48px;border:1.5px solid rgba(212,175,55,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div style="font-size:10px;color:#444;font-family:'Poppins',sans-serif;">Advisory</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:48px;height:48px;border:1.5px solid rgba(212,175,55,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div style="font-size:10px;color:#444;font-family:'Poppins',sans-serif;">Management</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:48px;height:48px;border:1.5px solid rgba(212,175,55,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          </div>
+          <div style="font-size:10px;color:#444;font-family:'Poppins',sans-serif;">Renovation</div>
+        </div>
+        <div style="margin-left:auto;text-align:right;">
+          <div style="font-size:12px;color:#444;line-height:1.7;">Style: Line / Outline<br/>Stroke: 1.5px<br/>Color: #D4AF37 (Gold)<br/>Size: 20–24px<br/>Container: 48×48px</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 06. SPACING ═══ -->
+  <div class="chapter" id="spacing">
+    <div class="section-label-line"><span class="sl-num">06</span><div class="sl-bar"></div><span class="sl-tag">Spacing</span></div>
+    <div class="chapter-num">Chapter Six</div>
+    <h2 class="chapter-title">Spacing System</h2>
+    <p class="chapter-sub">An 8px base unit. All spacing is a multiple of 4 or 8. Intentional white space communicates premium quality.</p>
+
+    <div class="spacing-scale">
+      <div class="spacing-row">
+        <div class="spacing-token">xs</div>
+        <div class="spacing-px">4px</div>
+        <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:4px;"></div></div>
+        <div class="spacing-use">Icon padding, tight stacks</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-token">sm</div>
+        <div class="spacing-px">8px</div>
+        <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:8px;"></div></div>
+        <div class="spacing-use">Button icon gap, badge padding</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-token">md</div>
+        <div class="spacing-px">16px</div>
+        <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:16px;"></div></div>
+        <div class="spacing-use">Card internal padding, list gaps</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-token">lg</div>
+        <div class="spacing-px">24px</div>
+        <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:24px;"></div></div>
+        <div class="spacing-use">Section header gap, grid gap</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-token">xl</div>
+        <div class="spacing-px">40px</div>
+        <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:40px;"></div></div>
+        <div class="spacing-use">Card padding, nav height buffer</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-token">2xl</div>
+        <div class="spacing-px">64px</div>
+        <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:64px;"></div></div>
+        <div class="spacing-use">Section header to content</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-token">3xl</div>
+        <div class="spacing-px">100px</div>
+        <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:100px;"></div></div>
+        <div class="spacing-use">Section vertical padding</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-token">hero</div>
+        <div class="spacing-px">120px+</div>
+        <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:140px;opacity:0.4;"></div></div>
+        <div class="spacing-use">Hero top padding (nav offset)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 07. COPYWRITING ═══ -->
+  <div class="chapter" id="copy">
+    <div class="section-label-line"><span class="sl-num">07</span><div class="sl-bar"></div><span class="sl-tag">Copywriting</span></div>
+    <div class="chapter-num">Chapter Seven</div>
+    <h2 class="chapter-title">Approved Copy</h2>
+    <p class="chapter-sub">These are the finalized brand texts. Use verbatim. Any modifications require design team approval.</p>
+
+    <div class="copy-block">
+      <div class="copy-label">Brand Tagline</div>
+      <div class="copy-text" style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.02em;"><strong>Building Trust. Creating Value.</strong></div>
+    </div>
+
+    <div class="copy-block">
+      <div class="copy-label">Hero Headline</div>
+      <div class="copy-text" style="font-family:'Poppins',sans-serif;font-size:28px;font-weight:900;letter-spacing:-0.03em;line-height:1.05;"><strong>Building Your Future,<br/>Brick by Brick</strong></div>
+    </div>
+
+    <div class="copy-block">
+      <div class="copy-label">Hero Sub-heading</div>
+      <div class="copy-text">Manju Construction delivers world-class residential and commercial spaces — crafted with precision, built to last, and designed to inspire.</div>
+    </div>
+
+    <div class="copy-block">
+      <div class="copy-label">About Section — Primary</div>
+      <div class="copy-text"><strong>Built on Trust. Driven by Quality.</strong></div>
+      <div class="copy-text" style="margin-top:12px;">Manju Construction was founded with a singular vision — to raise the standard of construction and real estate in Tamil Nadu. Over two decades, we have built not just structures, but lasting relationships with every client we serve.</div>
+    </div>
+
+    <div class="copy-block">
+      <div class="copy-label">Services Intro</div>
+      <div class="copy-text">From foundation to finish, we deliver complete construction solutions with uncompromising quality.</div>
+    </div>
+
+    <div class="copy-block">
+      <div class="copy-label">CTA Section Headline</div>
+      <div class="copy-text" style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;letter-spacing:-0.02em;"><strong>Let's Build Something Extraordinary Together</strong></div>
+    </div>
+
+    <div class="copy-block">
+      <div class="copy-label">Trust Stats (Use Exactly)</div>
+      <div class="copy-text">
+        <strong>20+</strong> Years of Excellence &nbsp;·&nbsp;
+        <strong>100+</strong> Projects Delivered &nbsp;·&nbsp;
+        <strong>100%</strong> Client Satisfaction &nbsp;·&nbsp;
+        <strong>50+</strong> Expert Professionals
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 08. DESIGN PRINCIPLES ═══ -->
+  <div class="chapter" id="principles">
+    <div class="section-label-line"><span class="sl-num">08</span><div class="sl-bar"></div><span class="sl-tag">Design Principles</span></div>
+    <div class="chapter-num">Chapter Eight</div>
+    <h2 class="chapter-title">Core Design Principles</h2>
+    <p class="chapter-sub">Eight non-negotiable design standards. Every page, every slide, every asset must pass these checks before publication.</p>
+
+    <div class="principles-grid">
+      <div class="principle-card">
+        <div class="principle-num">01</div>
+        <div class="principle-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="principle-title">Minimal But Bold</div>
+        <div class="principle-desc">Restraint is a luxury signal. Use negative space aggressively. Let elements breathe. Then make the elements that DO exist completely unmissable — oversized type, deep contrast, strong shapes.</div>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-num">02</div>
+        <div class="principle-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="principle-title">High Contrast Always</div>
+        <div class="principle-desc">Dark backgrounds with gold and red accents. Never place grey on grey. Every text element must meet WCAG AA contrast ratios at minimum. Test in grayscale — if it still works, the contrast is right.</div>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-num">03</div>
+        <div class="principle-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+        </div>
+        <div class="principle-title">Depth &amp; Layering</div>
+        <div class="principle-desc">Three Z-planes: base (#0D0D0D) → surface (#1A1A1A) → floating (#222). Add layered shadows tinted with brand colors. Use radial gradients for light sourcing. Never flat.</div>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-num">04</div>
+        <div class="principle-icon">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="principle-title">Trust-First Hierarchy</div>
+        <div class="principle-desc">Lead with credibility signals — years, numbers, certifications — before asking for action. Social proof precedes CTAs. Stats before services. Portfolio before contact form.</div>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-num">05</div>
+        <div class="principle-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="principle-title">Purposeful Animation</div>
+        <div class="principle-desc">Animate only <code style="font-size:11px;color:#D4AF37;background:#111;padding:2px 5px;">transform</code> and <code style="font-size:11px;color:#D4AF37;background:#111;padding:2px 5px;">opacity</code>. Use spring-style easing (cubic-bezier 0.4,0,0.2,1). Never transition-all. Scroll-triggered reveals create anticipation and premium pacing.</div>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-num">06</div>
+        <div class="principle-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div class="principle-title">Every State Designed</div>
+        <div class="principle-desc">Default, hover, focus-visible, active, disabled — all interactive elements have all states. Hover must feel rewarding. Focus rings use gold (#D4AF37). Never skip interactive states.</div>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-num">07</div>
+        <div class="principle-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 18.66l-1.41 1.41M20 12h-2M6 12H4M19.07 19.07l-1.41-1.41M5.34 5.34L3.93 3.93"/></svg>
+        </div>
+        <div class="principle-title">Intentional Typography</div>
+        <div class="principle-desc">Tight tracking (-0.03em) on display headings, generous line-height (1.7) on body. Never use a second font. Establish a clear hierarchy and never break it. Size expresses importance.</div>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-num">08</div>
+        <div class="principle-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="principle-title">Gold as Signal</div>
+        <div class="principle-desc">Gold (#D4AF37) is the scarcest color in the palette — use it for the most important secondary information. Section labels, icon strokes, price points. Overuse destroys its premium signal.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 09. IMAGERY ═══ -->
+  <div class="chapter" id="imagery">
+    <div class="section-label-line"><span class="sl-num">09</span><div class="sl-bar"></div><span class="sl-tag">Imagery</span></div>
+    <div class="chapter-num">Chapter Nine</div>
+    <h2 class="chapter-title">Imagery Style</h2>
+    <p class="chapter-sub">Photography and imagery must consistently reflect premium quality, architectural excellence, and aspirational living.</p>
+
+    <div class="imagery-grid">
+      <div class="imagery-card">
+        <div style="width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#2a1a0a,#1a0d05,#0f0808);display:flex;align-items:center;justify-content:center;">
+          <div style="text-align:center;padding:24px;">
+            <div style="font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(212,175,55,0.4);margin-bottom:8px;">Exterior — Night</div>
+            <div style="font-size:12px;color:rgba(245,245,245,0.2);">Warm lighting, dramatic sky,<br/>architectural clarity</div>
+          </div>
+        </div>
+        <div class="imagery-card-label">Night Architecture</div>
+      </div>
+      <div class="imagery-card">
+        <div style="width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#1a2510,#101808,#080e08);display:flex;align-items:center;justify-content:center;">
+          <div style="text-align:center;padding:24px;">
+            <div style="font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(212,175,55,0.4);margin-bottom:8px;">Interior — Golden Hour</div>
+            <div style="font-size:12px;color:rgba(245,245,245,0.2);">Natural light, warm tones,<br/>luxury materials</div>
+          </div>
+        </div>
+        <div class="imagery-card-label">Luxury Interiors</div>
+      </div>
+      <div class="imagery-card">
+        <div style="width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#1a1025,#0e0818,#080810);display:flex;align-items:center;justify-content:center;">
+          <div style="text-align:center;padding:24px;">
+            <div style="font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(212,175,55,0.4);margin-bottom:8px;">Aerial — Dusk</div>
+            <div style="font-size:12px;color:rgba(245,245,245,0.2);">Scale, context, landscape,<br/>urban integration</div>
+          </div>
+        </div>
+        <div class="imagery-card-label">Aerial Perspectives</div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;background:#1A1A1A;border:1px solid rgba(212,175,55,0.08);padding:32px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+        <div>
+          <div class="do-label" style="margin-bottom:12px;">✓ Image Criteria</div>
+          <ul class="do-list">
+            <li>High resolution (min 2000px wide)</li>
+            <li>Warm, architectural lighting</li>
+            <li>Clean compositions — rule of thirds</li>
+            <li>Apply gradient overlay (from-black/60)</li>
+            <li>Subtle color grade (warm shadows)</li>
+            <li>Focus on premium materials and finishes</li>
+          </ul>
+        </div>
+        <div>
+          <div class="dont-label" style="margin-bottom:12px;">✕ Never Use</div>
+          <ul class="dont-list">
+            <li>Stock photos with watermarks</li>
+            <li>Over-saturated or filtered images</li>
+            <li>Low-resolution or blurry photos</li>
+            <li>Images showing construction mess</li>
+            <li>Crowded or chaotic compositions</li>
+            <li>Pure white background product shots</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINAL NOTE -->
+    <div style="margin-top:80px;text-align:center;padding:60px;border:1px solid rgba(212,175,55,0.08);">
+      <img src="brand_assets/logo.jpg" style="height:56px;margin-bottom:24px;" alt="Manju Construction" />
+      <div style="font-family:'Poppins',sans-serif;font-size:24px;font-weight:800;letter-spacing:-0.02em;margin-bottom:12px;">Building Trust. Creating Value.</div>
+      <div style="font-size:13px;color:#444;max-width:500px;margin:0 auto;line-height:1.7;">This document represents the official brand standard for Manju Construction. All marketing materials, digital assets, and communications must adhere to these guidelines without exception.</div>
+      <div style="margin-top:32px;width:60px;height:2px;background:linear-gradient(to right,#E50914,#D4AF37);margin-left:auto;margin-right:auto;"></div>
+      <div style="margin-top:16px;font-size:11px;color:#333;letter-spacing:0.15em;text-transform:uppercase;font-family:'Poppins',sans-serif;">Manju Construction · Brand Guidelines v1.0 · 2024</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

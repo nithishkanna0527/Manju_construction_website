@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Manju Builders & Land Promoters — Building Dreams. Creating Land Value.</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --red: #C8102E;
+    --red-dark: #a00c24;
+    --gold: #D4AF37;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --surface: #1A1A1A;
+    --off-white: #F7F4F0;
+    --warm-white: #FAFAF8;
+    --grey: #7a7a7a;
+    --light-grey: #e8e5e0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--off-white);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; letter-spacing: -0.02em; }
+
+  .serif-italic {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--red); }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand { text-decoration: none; display: flex; flex-direction: column; }
+
+  .nav-brand-estd {
+    font-family: 'Poppins', sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+
+  .nav-brand-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--off-white);
+    line-height: 1;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(247,244,240,0.55);
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover { color: var(--off-white); }
+
+  .btn-nav {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 22px;
+    background: var(--red);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    box-shadow: 0 2px 16px rgba(200,16,46,0.3);
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .btn-nav:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+  /* ── BUTTONS ── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 30px;
+    background: var(--red);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: 0 4px 24px rgba(200,16,46,0.3);
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    background: var(--red-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 32px rgba(200,16,46,0.45);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: transparent;
+    color: var(--off-white);
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(247,244,240,0.3);
+    border-radius: 2px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .btn-outline:hover { border-color: var(--off-white); color: #fff; }
+
+  .btn-red-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: transparent;
+    color: var(--red);
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--red);
+    border-radius: 2px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .btn-red-outline:hover { background: var(--red); color: #fff; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, rgba(10,10,10,0.25) 0%, rgba(10,10,10,0.6) 60%, rgba(10,10,10,0.92) 100%),
+      linear-gradient(135deg, #1a0a06 0%, #2a1008 30%, #1a1008 60%, #0a0a0a 100%);
+  }
+
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 60% 30%, rgba(180,80,20,0.2) 0%, transparent 60%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+    width: 100%;
+  }
+
+  .hero-estd {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(247,244,240,0.4);
+    margin-bottom: 20px;
+  }
+
+  .hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(48px, 7vw, 92px);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: var(--off-white);
+    margin-bottom: 4px;
+  }
+
+  .hero-title-italic {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(52px, 7.5vw, 100px);
+    color: var(--red);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: rgba(247,244,240,0.55);
+    max-width: 520px;
+    line-height: 1.75;
+    margin-bottom: 40px;
+  }
+
+  .hero-ctas { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+  /* ── STATS ── */
+  .stats-strip {
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .stats-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stat-item {
+    padding: 44px 24px;
+    text-align: center;
+    position: relative;
+  }
+
+  .stat-item + .stat-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 25%; bottom: 25%;
+    width: 1px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .stat-num {
+    font-family: 'Poppins', sans-serif;
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--off-white);
+    margin-bottom: 6px;
+  }
+
+  .stat-num sup {
+    font-size: 22px;
+    color: var(--red);
+    font-weight: 700;
+  }
+
+  .stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(247,244,240,0.35);
+  }
+
+  /* ── SECTION COMMONS ── */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  section { padding: 100px 0; }
+
+  .section-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(247,244,240,0.4);
+    margin-bottom: 12px;
+  }
+
+  .section-chip.dark { color: rgba(10,10,10,0.4); }
+
+  .section-chip::before {
+    content: '';
+    display: block;
+    width: 24px; height: 1.5px;
+    background: var(--red);
+    flex-shrink: 0;
+  }
+
+  /* ── ABOUT (light bg) ── */
+  .about-section {
+    background: var(--warm-white);
+    color: var(--black);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(28px, 3.5vw, 46px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--black);
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .about-body {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .founder-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .founder-card {
+    padding: 24px;
+    background: var(--off-white);
+    border: 1px solid var(--light-grey);
+  }
+
+  .founder-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 4px;
+  }
+
+  .founder-role {
+    font-size: 12px;
+    color: var(--red);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .about-right-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 600;
+    color: var(--red);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .about-right-body { font-size: 14.5px; color: #666; line-height: 1.8; }
+
+  /* ── SERVICES (dark) ── */
+  .services-section { background: var(--black); }
+
+  .services-header { margin-bottom: 60px; }
+
+  .services-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 600;
+    color: var(--red);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .service-card {
+    background: var(--dark);
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+    border-top: 2px solid transparent;
+    transition: border-color 0.3s ease, background 0.3s ease;
+  }
+
+  .service-card:hover {
+    background: #161616;
+    border-top-color: var(--red);
+  }
+
+  .service-num {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: rgba(247,244,240,0.2);
+    margin-bottom: 28px;
+  }
+
+  .service-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--off-white);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .service-desc { font-size: 13.5px; color: #666; line-height: 1.7; }
+
+  /* ── PROJECTS ── */
+  .projects-section { background: var(--warm-white); color: var(--black); }
+
+  .projects-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 600;
+    color: var(--red);
+    margin-bottom: 48px;
+    letter-spacing: -0.01em;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .project-card { overflow: hidden; position: relative; cursor: pointer; }
+
+  .project-img-wrap {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .project-img-bg {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  .project-card:hover .project-img-bg { transform: scale(1.05); }
+
+  .project-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.08) 55%, transparent 100%);
+  }
+
+  .project-tag-wrap {
+    position: absolute;
+    top: 16px; left: 16px;
+  }
+
+  .project-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--red);
+    font-family: 'Poppins', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .project-info { padding: 20px 0 0; }
+
+  .project-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 4px;
+  }
+
+  .project-location { font-size: 12px; color: #999; letter-spacing: 0.05em; }
+
+  /* ── SIGNATURE (dark) ── */
+  .signature-section { background: var(--dark); }
+
+  .signature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .signature-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--off-white);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .signature-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 600;
+    color: var(--red);
+    margin-bottom: 24px;
+  }
+
+  .signature-body { font-size: 14.5px; color: #666; line-height: 1.8; margin-bottom: 36px; max-width: 480px; }
+
+  .signature-tags {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .signature-tag {
+    padding: 6px 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(247,244,240,0.5);
+  }
+
+  .signature-visual {
+    aspect-ratio: 4/5;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .signature-img {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2a1a10 0%, #3d2515 30%, #2a1a0a 60%, #1a1008 100%);
+    position: relative;
+  }
+
+  .signature-img::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(212,175,55,0.03) 30px, rgba(212,175,55,0.03) 31px),
+      repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(212,175,55,0.03) 40px, rgba(212,175,55,0.03) 41px);
+  }
+
+  .sig-badge {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    right: 32px;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(8px);
+    padding: 20px 24px;
+    border-left: 3px solid var(--red);
+  }
+
+  .sig-badge-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 4px;
+  }
+
+  .sig-badge-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--off-white);
+  }
+
+  /* ── ESTATES (dark) ── */
+  .estates-section { background: var(--black); }
+
+  .estates-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 600;
+    color: var(--red);
+    margin-bottom: 12px;
+  }
+
+  .estates-sub { font-size: 14.5px; color: #666; max-width: 560px; line-height: 1.75; margin-bottom: 52px; }
+
+  .estates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .estate-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    min-height: 260px;
+    border-top: 2px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  .estate-card:hover { border-top-color: var(--red); }
+
+  .estate-card img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+  }
+
+  .estate-card:hover img { transform: scale(1.05); }
+
+  .card-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  }
+
+  .estate-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 5px;
+    letter-spacing: -0.01em;
+  }
+
+  .estate-desc { font-size: 13px; color: #cccccc; line-height: 1.7; }
+
+  /* ── LOCATIONS (dark) ── */
+  .locations-section { background: var(--dark); }
+
+  .locations-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--off-white);
+    line-height: 1.1;
+  }
+
+  .locations-heading .accent {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--red);
+  }
+
+  .locations-sub { font-size: 14.5px; color: #666; max-width: 480px; line-height: 1.75; margin: 20px 0 52px; }
+
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .location-card {
+    background: #111;
+    padding: 32px;
+    transition: background 0.2s ease;
+    position: relative;
+  }
+
+  .location-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .location-card:hover { background: #151515; }
+  .location-card:hover::before { transform: scaleX(1); }
+
+  .location-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--off-white);
+    margin-bottom: 4px;
+  }
+
+  .location-state {
+    font-size: 11px;
+    color: rgba(247,244,240,0.25);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--black);
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .cta-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .cta-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--off-white);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .cta-heading .serif { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--red); }
+
+  .cta-sub { font-size: 14.5px; color: #666; line-height: 1.75; margin-bottom: 36px; }
+
+  .cta-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .cta-contact { padding: 40px; background: var(--surface); border-left: 3px solid var(--red); }
+
+  .cta-contact-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+
+  .cta-phone {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--off-white);
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.2s ease;
+  }
+
+  .cta-phone:hover { color: var(--red); }
+
+  .cta-email {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+    margin-bottom: 24px;
+    transition: color 0.2s ease;
+  }
+
+  .cta-email:hover { color: var(--off-white); }
+
+  .cta-areas {
+    font-size: 12px;
+    color: rgba(247,244,240,0.25);
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+  }
+
+  .cta-areas strong { color: rgba(247,244,240,0.4); font-weight: 600; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #080808;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    padding: 48px 0 32px;
+  }
+
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand { }
+
+  .footer-brand-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--off-white);
+    margin-bottom: 4px;
+  }
+
+  .footer-tagline {
+    font-size: 11px;
+    color: rgba(247,244,240,0.2);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .footer-desc { font-size: 13px; color: #444; line-height: 1.7; max-width: 300px; }
+
+  .footer-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(247,244,240,0.25);
+    margin-bottom: 20px;
+  }
+
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+  .footer-links a {
+    font-size: 13.5px;
+    color: #444;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover { color: var(--off-white); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.04);
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .footer-copy { font-size: 12px; color: rgba(247,244,240,0.18); }
+
+  /* ── SERVICE CARD IMAGES ── */
+  .service-card {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .service-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  .service-card:hover .service-img { transform: scale(1.05); }
+
+  .service-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.45) 50%, rgba(10,10,10,0.15) 100%);
+    z-index: 1;
+  }
+
+  .service-content { position: relative; z-index: 2; }
+
+  /* ── PROJECT CARD IMAGES ── */
+  .project-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  .project-card:hover .project-img { transform: scale(1.05); }
+
+  /* ── SIGNATURE IMAGE ── */
+  .signature-real-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    inset: 0;
+  }
+
+  /* ── FADE IN ── */
+  .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .signature-grid { grid-template-columns: 1fr; gap: 48px; }
+    .cta-inner { grid-template-columns: 1fr; gap: 40px; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .locations-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .estates-grid { grid-template-columns: 1fr; }
+    .locations-grid { grid-template-columns: 1fr 1fr; }
+    .founder-cards { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand" style="flex-direction:row;align-items:center;gap:10px;">
+      <img src="brand_assets/logo.jpg" alt="Manju Builders" style="height:36px;width:auto;" />
+      <div>
+        <span class="nav-brand-estd">Estd. Excellence</span>
+        <span class="nav-brand-name">MANJU BUILDERS</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#estates">Estates</a></li>
+      <li><a href="#locations">Locations</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="tel:+919940980919" class="btn-nav">Call Now</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-estd">Manju Builders &amp; Land Promoters</div>
+    <h1 class="hero-title">Building Dreams.</h1>
+    <span class="hero-title-italic">Creating Land Value.</span>
+    <p class="hero-sub">
+      20+ years of crafting luxury villas, hill-area homes and premium estates across Tamil Nadu — defined by our signature stone elevation design.
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Get a Quote</a>
+      <a href="#projects" class="btn-outline">View Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">20<sup>+</sup></div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">150<sup>+</sup></div>
+      <div class="stat-label">Projects Delivered</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5</div>
+      <div class="stat-label">Hill Locations</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100<sup>%</sup></div>
+      <div class="stat-label">Trust &amp; Quality</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ABOUT ══ -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="fade-up">
+        <div class="section-chip dark">Who We Are</div>
+        <h2 class="about-heading">Two decades of craftsmanship, one signature style.</h2>
+        <p class="about-body">Founded by visionary builders, Manju Builders &amp; Land Promoters has shaped over 20 years of premium homes, hill-area villas and curated estates across Tamil Nadu's most coveted highland locations.</p>
+        <p class="about-body">Every project carries our signature elevation stone design — a hallmark of permanence, character and the rugged elegance of the hills.</p>
+        <div class="founder-cards">
+          <div class="founder-card">
+            <div class="founder-name">Balamurugan R</div>
+            <div class="founder-role">Founder &amp; Builder</div>
+          </div>
+          <div class="founder-card">
+            <div class="founder-name">Manju B</div>
+            <div class="founder-role">Co-Founder</div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:0.15s;">
+        <div class="about-right-label">
+          Craftsmanship rooted<br/>in the hills.
+        </div>
+        <p class="about-right-body">Our work spans Dindigul and the highland territories of Sirumalai, Adalur, Pandrimalai, Thohamalai and Kodaikanal — communities where our name has become synonymous with quality, honesty and enduring construction.</p>
+        <p class="about-right-body" style="margin-top:16px;">Every stone placed, every wall raised, reflects two decades of refinement in building homes that outlast generations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="services-header fade-up">
+      <div class="section-chip">What We Build</div>
+      <div class="services-tagline">Construction. Refined.</div>
+      <p style="font-size:14.5px;color:#555;max-width:480px;margin-top:12px;">Four core specializations, one uncompromising standard.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <img src="img_assets/luxuary_villas.jpg" alt="Luxury Villas" class="service-img" loading="lazy" />
+        <div class="service-img-overlay"></div>
+        <div class="service-content">
+          <div class="service-num">01</div>
+          <div class="service-title">Luxury Villas</div>
+          <div class="service-desc">Bespoke villas tailored to your lifestyle, designed for hill and plain terrains.</div>
+        </div>
+      </div>
+      <div class="service-card fade-up" style="transition-delay:0.1s">
+        <img src="img_assets/individial%20_houses.jpg" alt="Individual Houses" class="service-img" loading="lazy" />
+        <div class="service-img-overlay"></div>
+        <div class="service-content">
+          <div class="service-num">02</div>
+          <div class="service-title">Individual Houses</div>
+          <div class="service-desc">From foundation to finish — independent homes built with precision and care.</div>
+        </div>
+      </div>
+      <div class="service-card fade-up" style="transition-delay:0.2s">
+        <img src="img_assets/farm_houses.jpg" alt="Farmhouses" class="service-img" loading="lazy" />
+        <div class="service-img-overlay"></div>
+        <div class="service-content">
+          <div class="service-num">03</div>
+          <div class="service-title">Farmhouses</div>
+          <div class="service-desc">Hillside farmhouses blending nature, comfort and our signature stone elevation.</div>
+        </div>
+      </div>
+      <div class="service-card fade-up" style="transition-delay:0.3s">
+        <img src="img_assets/apartments.jpg" alt="Apartments" class="service-img" loading="lazy" />
+        <div class="service-img-overlay"></div>
+        <div class="service-content">
+          <div class="service-num">04</div>
+          <div class="service-title">Apartments</div>
+          <div class="service-desc">Modern multi-unit residences engineered for community living and lasting value.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECTS ══ -->
+<section class="projects-section" id="projects">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-chip dark">Selected Work</div>
+      <div class="projects-tagline">A portfolio of distinction.</div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card fade-up">
+        <div class="project-img-wrap">
+          <img src="img_assets/stone_elevation_%20villa.png" alt="Stone Elevation Villa, Kodaikanal" class="project-img project-img-bg" loading="lazy" />
+          <div class="project-img-overlay"></div>
+          <div class="project-tag-wrap"><div class="project-tag">Villa · Kodaikanal</div></div>
+        </div>
+        <div class="project-info">
+          <div class="project-title">Stone Elevation Villa</div>
+          <div class="project-location">Kodaikanal, Tamil Nadu</div>
+        </div>
+      </div>
+      <div class="project-card fade-up" style="transition-delay:0.1s">
+        <div class="project-img-wrap">
+          <img src="img_assets/misty_hill_retreat.jpg" alt="Misty Hill Retreat, Sirumalai" class="project-img project-img-bg" loading="lazy" />
+          <div class="project-img-overlay"></div>
+          <div class="project-tag-wrap"><div class="project-tag">Farmhouse · Sirumalai</div></div>
+        </div>
+        <div class="project-info">
+          <div class="project-title">Misty Hill Retreat</div>
+          <div class="project-location">Sirumalai, Tamil Nadu</div>
+        </div>
+      </div>
+      <div class="project-card fade-up" style="transition-delay:0.2s">
+        <div class="project-img-wrap">
+          <img src="img_assets/premium_residence.png" alt="Premium Residences, Adalur" class="project-img project-img-bg" loading="lazy" />
+          <div class="project-img-overlay"></div>
+          <div class="project-tag-wrap"><div class="project-tag">Apartments · Adalur</div></div>
+        </div>
+        <div class="project-info">
+          <div class="project-title">Premium Residences</div>
+          <div class="project-location">Adalur, Tamil Nadu</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SIGNATURE ══ -->
+<section class="signature-section" id="signature">
+  <div class="container">
+    <div class="signature-grid">
+      <div class="fade-up">
+        <div class="section-chip">Our Signature</div>
+        <h2 class="signature-heading">The Stone Elevation.</h2>
+        <div class="signature-sub">A mark of permanence.</div>
+        <p class="signature-body">Every Manju build carries our trademark elevation stone design — hand-selected, precisely laid, and engineered to age with grace. It's how you'll always recognize our work in the hills.</p>
+        <div class="signature-tags">
+          <div class="signature-tag">Hand-laid</div>
+          <div class="signature-tag">Hill-tested</div>
+          <div class="signature-tag">Timeless</div>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:0.15s;">
+        <div class="signature-visual">
+          <img src="img_assets/signature_stone_%20design.png" alt="Manju Builders Signature Stone Elevation Design" class="signature-real-img" loading="lazy" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.6) 0%,rgba(10,10,10,0.1) 40%,transparent 70%);pointer-events:none;"></div>
+          <div class="sig-badge">
+            <div class="sig-badge-label">Signature</div>
+            <div class="sig-badge-title">Elevation Stone Design</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ESTATES ══ -->
+<section class="estates-section" id="estates">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-chip">Land Promotion</div>
+      <div class="estates-tagline">Estates that grow in value.</div>
+      <p class="estates-sub">Curated hill-area land — pepper, coffee, and cardamom estates — promoted with transparency and long-term vision.</p>
+    </div>
+    <div class="estates-grid">
+      <div class="estate-card fade-up">
+        <img src="img_assets/pepper_estate.png" alt="Pepper Estate" loading="lazy" />
+        <div class="card-overlay">
+          <div class="estate-title">Pepper Estate</div>
+          <div class="estate-desc">Misty plantations on premium hill slopes.</div>
+        </div>
+      </div>
+      <div class="estate-card fade-up" style="transition-delay:0.1s">
+        <img src="img_assets/coffee_estate.png" alt="Coffee Estate" loading="lazy" />
+        <div class="card-overlay">
+          <div class="estate-title">Coffee Estate</div>
+          <div class="estate-desc">Productive coffee estates across premium hill terrains.</div>
+        </div>
+      </div>
+      <div class="estate-card fade-up" style="transition-delay:0.2s">
+        <img src="img_assets/cardamon_estate.png" alt="Cardamom Estate" loading="lazy" />
+        <div class="card-overlay">
+          <div class="estate-title">Cardamom Estate</div>
+          <div class="estate-desc">Aromatic cardamom highlands with timeless value.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LOCATIONS ══ -->
+<section class="locations-section" id="locations">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-chip">Where We Build</div>
+      <h2 class="locations-heading">
+        Cities, hills &amp; estates.<br/>
+        <span class="accent">One trusted name.</span>
+      </h2>
+      <p class="locations-sub">Villas, individual houses, apartments, farmhouses and premium estates — delivered across Dindigul and the hill regions of Tamil Nadu.</p>
+    </div>
+    <div class="locations-grid">
+      <div class="location-card fade-up">
+        <div class="location-name">Dindigul</div>
+        <div class="location-state">Tamil Nadu, India</div>
+      </div>
+      <div class="location-card fade-up" style="transition-delay:0.05s">
+        <div class="location-name">Sirumalai</div>
+        <div class="location-state">Tamil Nadu, India</div>
+      </div>
+      <div class="location-card fade-up" style="transition-delay:0.1s">
+        <div class="location-name">Adalur</div>
+        <div class="location-state">Tamil Nadu, India</div>
+      </div>
+      <div class="location-card fade-up" style="transition-delay:0.15s">
+        <div class="location-name">Pandrimalai</div>
+        <div class="location-state">Tamil Nadu, India</div>
+      </div>
+      <div class="location-card fade-up" style="transition-delay:0.2s">
+        <div class="location-name">Thohamalai</div>
+        <div class="location-state">Tamil Nadu, India</div>
+      </div>
+      <div class="location-card fade-up" style="transition-delay:0.25s">
+        <div class="location-name">Kodaikanal</div>
+        <div class="location-state">Tamil Nadu, India</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT CTA ══ -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="fade-up">
+        <div class="section-chip">Let's Build</div>
+        <h2 class="cta-heading">
+          Ready to start your<br/>
+          <span class="serif">dream project?</span>
+        </h2>
+        <p class="cta-sub">Talk to our founders. Get a free consultation, site visit and personalised proposal.</p>
+        <div class="cta-buttons">
+          <a href="tel:+919940980919" class="btn-primary">Call Now</a>
+          <a href="mailto:manjuconstructions@gmail.com" class="btn-red-outline">Send Email</a>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:0.15s;">
+        <div class="cta-contact">
+          <div class="cta-contact-label">Phone</div>
+          <a href="tel:+919940980919" class="cta-phone">+91 99409 80919</a>
+          <a href="tel:+919344698957" class="cta-phone">+91 93446 98957</a>
+          <div class="cta-contact-label" style="margin-top:20px;">Email</div>
+          <a href="mailto:manjuconstructions@gmail.com" class="cta-email">manjuconstructions@gmail.com</a>
+          <div class="cta-contact-label" style="margin-top:20px;">Service Areas</div>
+          <div class="cta-areas">Sirumalai · Adalur · Pandrimalai<br/>Thohamalai · Kodaikanal</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">MANJU BUILDERS &amp; LAND PROMOTERS</div>
+        <div class="footer-tagline">Building Dreams · Creating Land Value</div>
+        <p class="footer-desc">Premium hill-area homes, luxury villas and curated land estates across Tamil Nadu's most coveted highland locations.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Pages</div>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#estates">Estates</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <ul class="footer-links">
+          <li><a href="tel:+919940980919">+91 99409 80919</a></li>
+          <li><a href="tel:+919344698957">+91 93446 98957</a></li>
+          <li><a href="mailto:manjuconstructions@gmail.com">manjuconstructions@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Manju Builders &amp; Land Promoters. All rights reserved.</div>
+      <div class="footer-copy">Sirumalai · Adalur · Pandrimalai · Thohamalai · Kodaikanal</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.background =
+      window.scrollY > 60 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.95)';
+  });
+</script>
+</body>
+</html>
