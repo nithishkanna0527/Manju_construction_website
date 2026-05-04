@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Manju Builders & Land Promoters — Building Dreams. Creating Land Value.</title>
+<title>Manju Construction & Land Promoters — Building Dreams. Creating Land Value.</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600;1,700&display=swap" rel="stylesheet" />
 <style>
@@ -79,9 +79,9 @@
 
   .nav-brand-name {
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 800;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     color: var(--off-white);
     line-height: 1;
   }
@@ -213,6 +213,18 @@
     position: absolute;
     inset: 0;
     background: radial-gradient(ellipse 70% 60% at 60% 30%, rgba(180,80,20,0.2) 0%, transparent 60%);
+  }
+
+  .hero-shader {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .hero-shader canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .hero-content {
@@ -1025,10 +1037,10 @@
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-brand" style="flex-direction:row;align-items:center;gap:10px;">
-      <img src="brand_assets/logo.jpg" alt="Manju Builders" style="height:36px;width:auto;" />
+      <img src="brand_assets/logo.jpg" alt="Manju Construction" style="height:36px;width:auto;" />
       <div>
         <span class="nav-brand-estd">Estd. Excellence</span>
-        <span class="nav-brand-name">MANJU BUILDERS</span>
+        <span class="nav-brand-name">MANJU CONSTRUCTION</span>
       </div>
     </a>
     <ul class="nav-links">
@@ -1046,8 +1058,9 @@
 <!-- ══ HERO ══ -->
 <section class="hero" id="home">
   <div class="hero-bg"></div>
+  <div id="hero-shader" class="hero-shader"></div>
   <div class="hero-content">
-    <div class="hero-estd">Manju Builders &amp; Land Promoters</div>
+    <div class="hero-estd">Manju Construction &amp; Land Promoters</div>
     <h1 class="hero-title">Building Dreams.</h1>
     <span class="hero-title-italic">Creating Land Value.</span>
     <p class="hero-sub">
@@ -1089,7 +1102,7 @@
       <div class="fade-up">
         <div class="section-chip dark">Who We Are</div>
         <h2 class="about-heading">Two decades of craftsmanship, one signature style.</h2>
-        <p class="about-body">Founded by visionary builders, Manju Builders &amp; Land Promoters has shaped over 20 years of premium homes, hill-area villas and curated estates across Tamil Nadu's most coveted highland locations.</p>
+        <p class="about-body">Founded by visionary builders, Manju Construction &amp; Land Promoters has shaped over 20 years of premium homes, hill-area villas and curated estates across Tamil Nadu's most coveted highland locations.</p>
         <p class="about-body">Every project carries our signature elevation stone design — a hallmark of permanence, character and the rugged elegance of the hills.</p>
         <div class="founder-cards">
           <div class="founder-card">
@@ -1224,7 +1237,7 @@
       </div>
       <div class="fade-up" style="transition-delay:0.15s;">
         <div class="signature-visual">
-          <img src="img_assets/signature_stone_%20design.png" alt="Manju Builders Signature Stone Elevation Design" class="signature-real-img" loading="lazy" />
+          <img src="img_assets/signature_stone_%20design.png" alt="Manju Construction Signature Stone Elevation Design" class="signature-real-img" loading="lazy" />
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.6) 0%,rgba(10,10,10,0.1) 40%,transparent 70%);pointer-events:none;"></div>
           <div class="sig-badge">
             <div class="sig-badge-label">Signature</div>
@@ -1346,7 +1359,7 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <div class="footer-brand-name">MANJU BUILDERS &amp; LAND PROMOTERS</div>
+        <div class="footer-brand-name">MANJU CONSTRUCTION &amp; LAND PROMOTERS</div>
         <div class="footer-tagline">Building Dreams · Creating Land Value</div>
         <p class="footer-desc">Premium hill-area homes, luxury villas and curated land estates across Tamil Nadu's most coveted highland locations.</p>
       </div>
@@ -1369,7 +1382,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2026 Manju Builders &amp; Land Promoters. All rights reserved.</div>
+      <div class="footer-copy">© 2026 Manju Construction &amp; Land Promoters. All rights reserved.</div>
       <div class="footer-copy">Sirumalai · Adalur · Pandrimalai · Thohamalai · Kodaikanal</div>
     </div>
   </div>
@@ -1386,6 +1399,91 @@
     document.querySelector('nav').style.background =
       window.scrollY > 60 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.95)';
   });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
+<script>
+(function () {
+  var container = document.getElementById('hero-shader');
+  if (!container || !window.THREE) return;
+
+  var THREE = window.THREE;
+  container.innerHTML = '';
+
+  var camera = new THREE.Camera();
+  camera.position.z = 1;
+
+  var scene = new THREE.Scene();
+  var geometry = new THREE.PlaneBufferGeometry(2, 2);
+
+  var uniforms = {
+    time: { value: 1.0 },
+    resolution: { value: new THREE.Vector2() },
+  };
+
+  var material = new THREE.ShaderMaterial({
+    uniforms: uniforms,
+    vertexShader: 'void main() { gl_Position = vec4(position, 1.0); }',
+    fragmentShader: `
+      #define TWO_PI 6.2831853072
+      #define PI 3.14159265359
+      precision highp float;
+      uniform vec2 resolution;
+      uniform float time;
+      float random(vec2 st) {
+        return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+      }
+      void main(void) {
+        vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / min(resolution.x, resolution.y);
+        vec2 scale = vec2(3.0, 2.0);
+        vec2 screen = vec2(256.0);
+        uv = floor(uv * screen / scale) / (screen / scale);
+        float t = time * 0.04;
+        float lineWidth = 0.0012;
+        float intensity = 0.0;
+        for (int j = 0; j < 3; j++) {
+          for (int i = 0; i < 5; i++) {
+            intensity += lineWidth * float(i * i) /
+              abs(fract(t + float(i) * 0.015 - float(j) * 0.02) - length(uv));
+          }
+        }
+        vec3 deepRed = vec3(0.35, 0.02, 0.05);
+        vec3 gold    = vec3(1.0, 0.75, 0.2);
+        float glow = smoothstep(0.0, 1.5, intensity);
+        float shimmer = sin(uv.x * 8.0 + time * 0.5) * 0.5 + 0.5;
+        shimmer *= 0.15;
+        vec3 baseColor = mix(deepRed, gold, glow);
+        baseColor += gold * shimmer * glow;
+        float vignette = smoothstep(1.2, 0.2, length(uv));
+        baseColor *= vignette;
+        gl_FragColor = vec4(baseColor, 1.0);
+      }
+    `,
+  });
+
+  var mesh = new THREE.Mesh(geometry, material);
+  scene.add(mesh);
+
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
+
+  function onWindowResize() {
+    var rect = container.getBoundingClientRect();
+    renderer.setSize(rect.width, rect.height);
+    uniforms.resolution.value.x = renderer.domElement.width;
+    uniforms.resolution.value.y = renderer.domElement.height;
+  }
+  onWindowResize();
+  window.addEventListener('resize', onWindowResize);
+
+  function animate() {
+    requestAnimationFrame(animate);
+    uniforms.time.value += 0.015;
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
 </script>
 </body>
 </html>
