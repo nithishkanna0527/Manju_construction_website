@@ -1410,11 +1410,6 @@
 <!-- ══ ESTATES ══ -->
 <section class="estates-section" id="estates">
   <div class="container">
-    <div class="fade-up">
-      <div class="section-chip">Land Promotion</div>
-      <div class="estates-tagline">Estates that grow in value.</div>
-      <p class="estates-sub">Curated hill-area land — pepper, coffee, and cardamom estates — promoted with transparency and long-term vision.</p>
-    </div>
     <!-- ── Land Promo: text left · images right ── -->
     <div class="land-promo-wrap fade-up" style="transition-delay:0.1s;">
       <!-- Left: content -->
@@ -1464,6 +1459,12 @@
     </div>
 
     <div class="land-divider"></div>
+
+    <div class="fade-up" style="margin-bottom:52px;">
+      <div class="section-chip">Land Promotion</div>
+      <div class="estates-tagline">Estates that grow in value.</div>
+      <p class="estates-sub" style="margin-bottom:0;">Curated hill-area land — pepper, coffee, and cardamom estates — promoted with transparency and long-term vision.</p>
+    </div>
 
     <div class="estates-grid">
       <div class="estate-card fade-up">
@@ -1614,8 +1615,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
 <script>
 (function () {
+  // ── Guard: prevent multiple renderer instances ──
+  if (window.__heroShaderActive) return;
+
   var container = document.getElementById('hero-shader');
   if (!container || !window.THREE) return;
+
+  // ── WebGL availability check (mobile/Vercel SSR safe) ──
+  function webGLAvailable() {
+    try {
+      var c = document.createElement('canvas');
+      return !!(
+        window.WebGLRenderingContext &&
+        (c.getContext('webgl') || c.getContext('experimental-webgl'))
+      );
+    } catch (e) { return false; }
+  }
+  if (!webGLAvailable()) return; // silent fallback — hero gradient still visible
+
+  window.__heroShaderActive = true;
 
   var THREE = window.THREE;
   container.innerHTML = '';
@@ -1623,11 +1641,11 @@
   var camera = new THREE.Camera();
   camera.position.z = 1;
 
-  var scene = new THREE.Scene();
+  var scene    = new THREE.Scene();
   var geometry = new THREE.PlaneBufferGeometry(2, 2);
 
   var uniforms = {
-    time: { value: 1.0 },
+    time:       { value: 1.0 },
     resolution: { value: new THREE.Vector2() },
   };
 
@@ -1674,11 +1692,28 @@
   var mesh = new THREE.Mesh(geometry, material);
   scene.add(mesh);
 
-  var renderer = new THREE.WebGLRenderer({ antialias: true });
-  renderer.setPixelRatio(window.devicePixelRatio);
-  container.appendChild(renderer.domElement);
+  // ── Renderer creation — wrapped in try/catch ──
+  var renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({
+      antialias: false,          // disabled: reduces GPU load & context-creation failures
+      alpha: false,
+      powerPreference: 'default',
+    });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5)); // cap at 1.5×
+    container.appendChild(renderer.domElement);
+  } catch (e) {
+    // Context creation failed — dispose resources, fall back to CSS gradient
+    geometry.dispose();
+    material.dispose();
+    window.__heroShaderActive = false;
+    return;
+  }
+
+  var rafId = null;
 
   function onWindowResize() {
+    if (!renderer) return;
     var rect = container.getBoundingClientRect();
     renderer.setSize(rect.width, rect.height);
     uniforms.resolution.value.x = renderer.domElement.width;
@@ -1688,11 +1723,38 @@
   window.addEventListener('resize', onWindowResize);
 
   function animate() {
-    requestAnimationFrame(animate);
+    rafId = requestAnimationFrame(animate);
     uniforms.time.value += 0.015;
     renderer.render(scene, camera);
   }
   animate();
+
+  // ── Full cleanup ──
+  function cleanup() {
+    if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+    window.removeEventListener('resize', onWindowResize);
+    if (renderer) {
+      renderer.dispose();
+      if (renderer.domElement && renderer.domElement.parentNode) {
+        renderer.domElement.parentNode.removeChild(renderer.domElement);
+      }
+      renderer = null;
+    }
+    geometry.dispose();
+    material.dispose();
+    window.__heroShaderActive = false;
+  }
+
+  window.addEventListener('beforeunload', cleanup);
+
+  // ── Pause when tab is hidden to reduce GPU usage ──
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+      if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+    } else if (renderer) {
+      animate();
+    }
+  });
 })();
 </script>
 </body>
