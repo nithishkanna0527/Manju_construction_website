@@ -987,6 +987,152 @@
     inset: 0;
   }
 
+  /* ── LAND PROMO (text left · images right) ── */
+  .land-promo-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 72px;
+    align-items: center;
+    margin-bottom: 72px;
+  }
+
+  .land-showcase-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 14px;
+    height: 460px;
+  }
+
+  .land-img-main {
+    position: relative;
+    overflow: hidden;
+    border-radius: 26px;
+    box-shadow: 0 12px 56px rgba(0,0,0,0.7), 0 0 0 1px rgba(212,175,55,0.09);
+  }
+
+  .land-img-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.75s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform;
+  }
+
+  .land-img-main:hover img { transform: scale(1.07); }
+
+  .land-img-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .land-img-stacked {
+    position: relative;
+    overflow: hidden;
+    border-radius: 26px;
+    flex: 1;
+    box-shadow: 0 12px 56px rgba(0,0,0,0.7), 0 0 0 1px rgba(212,175,55,0.09);
+  }
+
+  .land-img-stacked img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.75s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform;
+  }
+
+  .land-img-stacked:hover img { transform: scale(1.07); }
+
+  .land-dark-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.1) 45%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .land-img-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 26px;
+    box-shadow: inset 0 0 0 1px rgba(212,175,55,0.14);
+    pointer-events: none;
+    z-index: 2;
+    transition: box-shadow 0.35s ease;
+  }
+
+  .land-img-main:hover .land-img-ring,
+  .land-img-stacked:hover .land-img-ring {
+    box-shadow: inset 0 0 0 1.5px rgba(212,175,55,0.4), 0 0 48px rgba(212,175,55,0.1);
+  }
+
+  .land-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(22px, 2.6vw, 34px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--off-white);
+    line-height: 1.15;
+    margin-bottom: 18px;
+    margin-top: 12px;
+  }
+
+  .land-body {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.85;
+    margin-bottom: 32px;
+  }
+
+  .land-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .land-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 16px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px;
+    transition: border-color 0.25s ease, background 0.25s ease;
+    cursor: default;
+  }
+
+  .land-feature:hover {
+    border-color: rgba(212,175,55,0.28);
+    background: rgba(212,175,55,0.04);
+  }
+
+  .land-feature-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    box-shadow: 0 0 6px rgba(212,175,55,0.5);
+  }
+
+  .land-feature-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: rgba(247,244,240,0.55);
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+  }
+
+  .land-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    margin-bottom: 60px;
+  }
+
   /* ── FADE IN ── */
   .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -999,6 +1145,9 @@
     .cta-inner { grid-template-columns: 1fr; gap: 40px; }
     .footer-top { grid-template-columns: 1fr 1fr; }
     .locations-grid { grid-template-columns: repeat(2, 1fr); }
+    .land-promo-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .land-showcase-grid { height: 380px; }
+    .land-features { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 768px) {
@@ -1010,6 +1159,11 @@
     .locations-grid { grid-template-columns: 1fr 1fr; }
     .founder-cards { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr; }
+    .land-promo-wrap { gap: 28px; }
+    .land-showcase-grid { height: 280px; gap: 10px; }
+    .land-img-stack { gap: 10px; }
+    .land-features { gap: 8px; }
+    .land-feature { padding: 11px 13px; }
 
     .nav-inner {
       padding: 0 16px;
@@ -1028,6 +1182,10 @@
     .btn-nav { padding: 8px 12px; }
     .btn-nav-full { display: none; }
     .btn-nav-short { display: inline; }
+    .land-showcase-grid { grid-template-columns: 1fr; height: auto; }
+    .land-img-main { height: 220px; }
+    .land-img-stack { flex-direction: row; gap: 10px; height: 140px; }
+    .land-img-stacked { flex: 1; height: 100%; }
   }
 </style>
 </head>
@@ -1257,6 +1415,56 @@
       <div class="estates-tagline">Estates that grow in value.</div>
       <p class="estates-sub">Curated hill-area land — pepper, coffee, and cardamom estates — promoted with transparency and long-term vision.</p>
     </div>
+    <!-- ── Land Promo: text left · images right ── -->
+    <div class="land-promo-wrap fade-up" style="transition-delay:0.1s;">
+      <!-- Left: content -->
+      <div>
+        <div class="section-chip">Premium Real Estate</div>
+        <h2 class="land-heading">Building Tomorrow's Investment Destinations</h2>
+        <p class="land-body">At Manju Construction, we transform strategic land parcels into premium plotted developments designed for future growth, long-term value, and modern living. Every project is carefully planned with wide roads, modern infrastructure, secure documentation, and investment-focused layouts that create sustainable appreciation and future-ready communities.</p>
+        <div class="land-features">
+          <div class="land-feature">
+            <div class="land-feature-dot"></div>
+            <div class="land-feature-text">Prime Locations</div>
+          </div>
+          <div class="land-feature">
+            <div class="land-feature-dot"></div>
+            <div class="land-feature-text">DTCP &amp; RERA Approved</div>
+          </div>
+          <div class="land-feature">
+            <div class="land-feature-dot"></div>
+            <div class="land-feature-text">Modern Infrastructure</div>
+          </div>
+          <div class="land-feature">
+            <div class="land-feature-dot"></div>
+            <div class="land-feature-text">Future Appreciation</div>
+          </div>
+        </div>
+      </div>
+      <!-- Right: image showcase -->
+      <div class="land-showcase-grid">
+        <div class="land-img-main">
+          <img src="img_assets/Manju_Constructions.png" alt="Manju Constructions Development" loading="lazy" style="object-position: right center;" />
+          <div class="land-dark-overlay"></div>
+          <div class="land-img-ring"></div>
+        </div>
+        <div class="land-img-stack">
+          <div class="land-img-stacked">
+            <img src="img_assets/hills_plot_segregation.jpg" alt="Premium Hill Plot Development" loading="lazy" />
+            <div class="land-dark-overlay"></div>
+            <div class="land-img-ring"></div>
+          </div>
+          <div class="land-img-stacked">
+            <img src="img_assets/Land_Layout.png" alt="Premium Land Layout Plan" loading="lazy" />
+            <div class="land-dark-overlay"></div>
+            <div class="land-img-ring"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="land-divider"></div>
+
     <div class="estates-grid">
       <div class="estate-card fade-up">
         <img src="img_assets/pepper_estate.png" alt="Pepper Estate" loading="lazy" />
@@ -1346,6 +1554,8 @@
           <a href="tel:+919344698957" class="cta-phone">+91 93446 98957</a>
           <div class="cta-contact-label" style="margin-top:20px;">Email</div>
           <a href="mailto:manjuconstructions@gmail.com" class="cta-email">manjuconstructions@gmail.com</a>
+          <div class="cta-contact-label" style="margin-top:20px;">Office Address</div>
+          <div class="cta-areas">S.J Complex, R.M Colony<br/>80 Feet Road, Main 7th Cross<br/><strong>Dindigul</strong></div>
           <div class="cta-contact-label" style="margin-top:20px;">Service Areas</div>
           <div class="cta-areas">Sirumalai · Adalur · Pandrimalai<br/>Thohamalai · Kodaikanal</div>
         </div>
